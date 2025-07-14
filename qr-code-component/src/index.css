@@ -1,0 +1,42 @@
+@import url(https://fonts.google.com/specimen/Outfit);
+
+.Page{
+  background-color: hsl(212, 45%, 89%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  height: 100vh;
+}
+
+.card{
+  background-color: white;
+  width: 250px;
+  height: 420px;
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.contents1{
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.QrImage{
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+.title{
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.contents2 p{
+  font-weight: 400;
+  font-size: 15px;
+  color: hsla(0, 0%, 0%, 0.4);
+}
