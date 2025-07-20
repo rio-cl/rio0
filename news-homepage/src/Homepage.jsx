@@ -50,7 +50,7 @@ function HomePage() {
 
           {/* Right side (New section) */}
           <div className="bg-[hsl(240,_100%,_5%)] text-white p-6">
-            <h1 className="text-yellow-400 text-4xl mb-6">New</h1>
+            <h1 className="text-[hsl(35,_77%,_62%)] text-4xl mb-6">New</h1>
             <div className="border-b border-gray-700 pb-4 mb-4">
               <h4 className="font-bold text mb-1 ">Hydrogen VS Electric Cars</h4>
               <p className="text-sm text-gray-400 mb-3">
