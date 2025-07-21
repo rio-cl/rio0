@@ -12,7 +12,7 @@ const PaymentForm = () => {
         <img
           src={MainBg}
           alt="Main Background"
-          className="absolute inset-0 w-60px h-full object-cover"
+          className="absolute inset-0 w-[300px] h-full object-cover"
         />
 
         {/* Cards container */}
