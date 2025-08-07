@@ -20,17 +20,20 @@ export default function SpendingChart() {
         {data.map((item, index) => {
           const percent = (item.amount / max) * 100;
           const height = `${percent}%`;
-          const isWednesday = item.day === 'wed';
-          const barColor = isWednesday ? 'bg-[hsl(186,_34%,_65%)]' : 'bg-[hsl(10,_79%,_65%)]';
+          const barColor =  'bg-[hsl(10,_79%,_65%)]';
 
     return(
-        <div key={index} className="flex flex-col items-center w-10 ">
+        <div key={index} className="flex flex-col items-center w-10 relative group">
+              <div className={"absolute -top-8 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition duration-30"}>
+              ${item.amount}
+              </div>
+
              <div className="flex items-end h-full w-full">
                 <div
-              className={`rounded-md ${barColor} w-full `}
-              style={{ 
-                height,
-               }}
+                  className={`rounded-md ${barColor} w-full hover:bg-[hsl(186,_34%,_65%)] text-[hsl(10,_79%,_65%)]`}
+                  style={{ 
+                    height,
+                  }}
             ></div>
              </div>
             
