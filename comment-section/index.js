@@ -68,9 +68,20 @@ function renderComments(){
             <div id="reply-box-${index}" class="reply-box" style="display: none;">
                 <textarea id="reply-input-${index}" placeholder="Write a reply..."></textarea>
                 <button onclick="addReply(${index})">Send</button>
-            </div>
-            
+            </div>       
         `;
+        
+        setTimeout(() => { // Use timeout so DOM updates first
+        const replyInput = document.getElementById(`reply-input-${index}`);
+        if (replyInput) {
+            replyInput.addEventListener("keydown", function (event) {
+                if (event.key === "Enter" && !event.shiftKey) {
+                    event.preventDefault();
+                    addReply(index);
+                }
+            });
+        }
+    }, 0);
 
     if (Array.isArray(comment.replies)) {
     const repliesContainer = document.createElement("div");
