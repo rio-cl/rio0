@@ -7,6 +7,7 @@ function Tip(){
     const [people, setPeople] = useState(5);
     const [tipamount, setTipAmount] = useState(0);
     const [total, setTotal] = useState(0);
+    const [customTip, setCustomTip] = useState("");
 
     function price(percent){
         const bill = parseFloat(billamount) || 0;
@@ -24,6 +25,7 @@ function Tip(){
         setPeople(1);
         setTipAmount(0);
         setTotal(0);
+        setCustomTip("")
     }
 
     return(
@@ -52,7 +54,19 @@ function Tip(){
                             <button onClick={() => price(0.15)} className="bg-[hsl(183,_100%,_15%)] m-2 w-[90px] h-[35px] rounded text-white hover:bg-[hsl(172,_67%,_45%)] hover:text-[hsl(183,_100%,_15%)]">15%</button>
                             <button onClick={() => price(0.25)} className="bg-[hsl(183,_100%,_15%)] mr-4 w-[90px] h-[35px] rounded text-white hover:bg-[hsl(172,_67%,_45%)] hover:text-[hsl(183,_100%,_15%)]">25%</button>
                             <button onClick={() => price(0.50)} className="bg-[hsl(183,_100%,_15%)] mr-4 w-[90px] h-[35px] rounded text-white hover:bg-[hsl(172,_67%,_45%)] hover:text-[hsl(183,_100%,_15%)]">50%</button>
-                            <button onClick={() => price(0.05)} className="bg-[hsl(185,_41%,_84%)] m-2 w-[90px] h-[35px] rounded text-[hsl(186,_14%,_43%)] hover:bg-[hsl(183,_100%,_15%)] hover:text-[hsl(185,_41%,_84%)] ">Custom</button>
+                            {/*<button onClick={() => price(0.05)} className="bg-[hsl(185,_41%,_84%)] m-2 w-[90px] h-[35px] rounded text-[hsl(186,_14%,_43%)] hover:bg-[hsl(183,_100%,_15%)] hover:text-[hsl(185,_41%,_84%)] ">Custom</button>*/}
+
+                            <input
+                                type="number"
+                                placeholder="Custom"
+                                value={customTip}
+                                onChange={(e) => {
+                                    setCustomTip(e.target.value);
+                                    if(e.target.value !== ""){
+                                        price(parseFloat(e.target.value) / 100);
+                                    }
+                                }}
+                                className="bg-[hsl(185,_41%,_84%)] m-2 w-[90px] h-[35px] rounded text-center placeholder-[hsl(183,_100%,_15%)]  hover:bg-[hsl(183,_100%,_15%)] hover:placeholder-[hsl(185,_41%,_84%)] hover:text-[hsl(185,_41%,_84%)] text-[hsl(183,_100%,_15%)]"/>
                         </div>
                     </div>
 
